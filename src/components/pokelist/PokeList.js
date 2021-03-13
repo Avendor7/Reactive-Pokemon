@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, {  } from 'react';
+import PokeCell from './pokecell/PokeCell';
+import './PokeList.scss';
 
 function PokeList() {
   // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(0);
-
+ 
   return (
-    <div>
-     
+    <div className="pokelist">
+      <PokeCell />
+      <PokeCell />
+      <PokeCell />
     </div>
   );
 }
