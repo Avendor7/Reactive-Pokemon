@@ -6,16 +6,10 @@ const P = require("pokeapi-js-wrapper");
 const Pokedex = new P.Pokedex();
 
 function App() {
-  
-  let pikachu = Pokedex.getPokemonByName("pikachu")
-  .then(function(response) {
-    console.log(response)
-  })
-
   return (
     <div className="App">
       <Searchbox />
-      <PokeList />
+      <PokeList mainPokedex={Pokedex}/>
       <PokeDetails />
       
     </div>

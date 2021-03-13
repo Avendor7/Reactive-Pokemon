@@ -2,9 +2,12 @@ import React, {  } from 'react';
 import PokeCell from './pokecell/PokeCell';
 import './PokeList.scss';
 
-function PokeList() {
-  // Declare a new state variable, which we'll call "count"
- 
+function PokeList(props) {
+  
+  let raochu = props.mainPokedex.getPokemonByName("raichu")
+  .then(function(response) {
+    console.log(response)
+  })
   return (
     <div className="pokelist">
       <PokeCell />
