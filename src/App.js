@@ -3,13 +3,18 @@ import PokeDetails from './components/pokedetails/PokeDetails';
 import PokeList from './components/pokelist/PokeList';
 import Searchbox from './components/searchbox/Searchbox';
 const P = require("pokeapi-js-wrapper");
-const Pokedex = new P.Pokedex();
+//configure dex
+const Pokedex = new P.Pokedex({
+  protocol:"https",
+  cache: true,
+  timeout: 5000
+});
 
 function App() {
   return (
     <div className="App">
       <Searchbox />
-      <PokeList mainPokedex={Pokedex}/>
+      <PokeList Dex={Pokedex}/>
       <PokeDetails />
       
     </div>

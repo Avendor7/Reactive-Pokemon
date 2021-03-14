@@ -1,11 +1,10 @@
 import React, {  } from 'react';
 import './PokeCell.scss';
 
-function PokeCell() {
-  // Declare a new state variable, which we'll call "count"
- 
+function PokeCell(props) {
+  console.log(props.pokemon);
   return (
-    <button className="poke-cell"></button>
+    <button className="pokeCell">{props.pokemon}</button>
   );
 }
 export default PokeCell;
