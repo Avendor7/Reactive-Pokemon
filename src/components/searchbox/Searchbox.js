@@ -1,12 +1,16 @@
 import React, {  } from 'react';
 
-function Searchbox() {
-  // Declare a new state variable, which we'll call "count"
- 
+function Searchbox(props) {
+
+  function handleChange(event) {
+    // Here, we invoke the callback with the new value
+    props.onChange(event.target.value.toLowerCase());
+  }
+
   return (
     <div className="searchbox">
         <label htmlFor="searchbox"></label>
-        <input id="searchbox"></input>
+        <input id="searchbox" value={props.value} onChange={handleChange}></input>
     </div>
   );
 }

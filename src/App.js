@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './App.scss';
 import PokeDetails from './components/pokedetails/PokeDetails';
 import PokeList from './components/pokelist/PokeList';
@@ -11,9 +12,17 @@ const Pokedex = new P.Pokedex({
 });
 
 function App() {
+
+  const [value, setValue] = useState("");
+
+    function handleChange(newValue) {
+      setValue(newValue);
+      console.log(value);
+    }
+
   return (
     <div className="App">
-      <Searchbox />
+      <Searchbox value={value} onChange={handleChange}/>
       <PokeList Dex={Pokedex}/>
       <PokeDetails />
       
