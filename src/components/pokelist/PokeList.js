@@ -14,7 +14,7 @@ function PokeList(props) {
   const [pokemonArray, setPokemonArray] = useState([]);
 
   props.Dex.getPokemonsList(interval).then(function(response) {
-    setPokemonArray(response.results);
+    //setPokemonArray(response.results);
   })
 
   return (

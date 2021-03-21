@@ -13,16 +13,16 @@ const Pokedex = new P.Pokedex({
 
 function App() {
 
-  const [value, setValue] = useState("");
+  const [selectedPokemon, setSelectedPokemon] = useState("pikachu");
 
     function handleChange(newValue) {
-      setValue(newValue);
-      console.log(value);
+      setSelectedPokemon(newValue);
+      console.log(selectedPokemon);
     }
 
   return (
     <div className="App">
-      <Searchbox value={value} onChange={handleChange}/>
+      <Searchbox selectedPokemon={selectedPokemon} onChange={handleChange}/>
       <PokeList Dex={Pokedex}/>
       <PokeDetails />
       

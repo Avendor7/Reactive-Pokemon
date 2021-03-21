@@ -10,7 +10,7 @@ function Searchbox(props) {
   return (
     <div className="searchbox">
         <label htmlFor="searchbox"></label>
-        <input id="searchbox" value={props.value} onChange={handleChange}></input>
+        <input id="searchbox" value={props.selectedPokemon} onChange={handleChange}></input>
     </div>
   );
 }
