@@ -12,11 +12,11 @@ function PokeList(props) {
 
   
   const [pokemonArray, setPokemonArray] = useState([]);
-
-  props.Dex.getPokemonsList(interval).then(function(response) {
-    //setPokemonArray(response.results);
+  /*
+  props.dex.getPokemonsList(interval).then(function(response) {
+    setPokemonArray(response.results);
   })
-
+*/
   return (
     <div className="pokelist">
       <ul>

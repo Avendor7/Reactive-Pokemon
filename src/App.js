@@ -23,8 +23,8 @@ function App() {
   return (
     <div className="App">
       <Searchbox selectedPokemon={selectedPokemon} onChange={handleChange}/>
-      <PokeList Dex={Pokedex}/>
-      <PokeDetails />
+      <PokeList dex={Pokedex}/>
+      <PokeDetails dex={Pokedex} selectedPokemon={selectedPokemon}/>
       
     </div>
   );
