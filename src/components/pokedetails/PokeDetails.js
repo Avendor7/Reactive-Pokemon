@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
-
+import './PokeDetails.scss';
 function PokeDetails(props) {
-  // Declare a new state variable, which we'll call "count"
-  //const [count, setCount] = useState(0);
 
+  const [pokemonDetails, setPokemonDetails] = useState([]);
 
-  const [pokemonArray, setPokemonArray] = useState([]);
-
-  props.dex.getPokemonByName(props.selectedPokemon).then(function(response) {
-    setPokemonArray(response.results);
-    console.log(response.results);
+  /*props.dex.getPokemonByName(props.selectedPokemon).then(function(response) {
+    setPokemonDetails(response);
+    console.log("response " + response.name);
   })
-
+*/
   return (
-    <div>
+    <div className="pokedetails">
       <p>{props.selectedPokemon}</p>
-      <p>{pokemonArray}</p>
+      <p>{pokemonDetails.name}</p>
     </div>
   );
 }

@@ -3,17 +3,19 @@ import './App.scss';
 import PokeDetails from './components/pokedetails/PokeDetails';
 import PokeList from './components/pokelist/PokeList';
 import Searchbox from './components/searchbox/Searchbox';
+
 const P = require("pokeapi-js-wrapper");
 //configure dex
 const Pokedex = new P.Pokedex({
   protocol:"https",
-  cache: true,
+  cacheImages: true,
+  cache:true,
   timeout: 5000
 });
 
 function App() {
 
-  const [selectedPokemon, setSelectedPokemon] = useState("pikachu");
+  const [selectedPokemon, setSelectedPokemon] = useState("squirtle");
 
     function handleChange(newValue) {
       setSelectedPokemon(newValue);
@@ -25,7 +27,6 @@ function App() {
       <Searchbox selectedPokemon={selectedPokemon} onChange={handleChange}/>
       <PokeList dex={Pokedex}/>
       <PokeDetails dex={Pokedex} selectedPokemon={selectedPokemon}/>
-      
     </div>
   );
 }
