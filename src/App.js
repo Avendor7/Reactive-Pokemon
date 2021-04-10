@@ -4,9 +4,10 @@ import PokeDetails from './components/pokedetails/PokeDetails';
 import PokeList from './components/pokelist/PokeList';
 import Searchbox from './components/searchbox/Searchbox';
 
-const P = require("pokeapi-js-wrapper");
+const pokeapi = require("pokeapi-js-wrapper");
+
 //configure dex
-const Pokedex = new P.Pokedex({
+const Pokedex = new pokeapi.Pokedex({
   protocol:"https",
   cacheImages: true,
   cache:true,
