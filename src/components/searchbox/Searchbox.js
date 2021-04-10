@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 function Searchbox({onChange, selectedPokemon}) {
 
@@ -14,5 +15,10 @@ function Searchbox({onChange, selectedPokemon}) {
         </div>
     );
 }
+
+Searchbox.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    selectedPokemon: PropTypes.string.isRequired,
+};
 
 export default Searchbox;

@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import PropTypes from "prop-types";
+
 import pokedex from '../../PokeDex';
 
 import './PokeDetails.scss';
@@ -20,5 +22,10 @@ function PokeDetails({selectedPokemon}) {
         </div>
     );
 }
+
+PokeDetails.propTypes = {
+    selectedPokemon: PropTypes.string.isRequired,
+};
+
 
 export default PokeDetails;

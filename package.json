@@ -40,6 +40,9 @@
       "react/destructuring-assignment": [
         "error",
         "always"
+      ],
+      "react/prop-types": [
+        "error"
       ]
     }
   },
