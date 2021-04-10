@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
-import './PokeDetails.scss';
-function PokeDetails(props) {
+import React, { useState, useEffect } from 'react'
+import './PokeDetails.scss'
 
-  const [pokemonDetails, setPokemonDetails] = useState([]);
+function PokeDetails (props) {
+  const [pokemonDetails, setPokemonDetails] = useState([])
 
-  /*props.dex.getPokemonByName(props.selectedPokemon).then(function(response) {
-    setPokemonDetails(response);
-    console.log("response " + response.name);
-  })
-*/
+  useEffect(() => {
+    props.dex.getPokemonByName(props.selectedPokemon).then(function (response) {
+      setPokemonDetails(response)
+      console.log('response ' + response.name)
+    })
+  }, [])
+
   return (
     <div className="pokedetails">
       <p>{props.selectedPokemon}</p>
@@ -17,4 +19,4 @@ function PokeDetails(props) {
   );
 }
 
-export default PokeDetails;
+export default PokeDetails
