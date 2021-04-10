@@ -2,11 +2,10 @@ import React from 'react';
 
 import './PokeCell.scss';
 
-function PokeCell(props) {
-  //console.log(props.pokemon);
-  return (
-    <button className="pokeCell">{props.pokemon}</button>
-  );
+function PokeCell({pokemon}) {
+    return (
+        <button className="pokeCell">{pokemon}</button>
+    );
 }
 
 export default PokeCell;

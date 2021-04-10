@@ -5,26 +5,26 @@ import pokedex from '../../PokeDex';
 import './PokeList.scss';
 
 function PokeList() {
-  const [pokemonArray, setPokemonArray] = useState([]);
+    const [pokemonArray, setPokemonArray] = useState([]);
 
-  useEffect(() => {
+    useEffect(() => {
     //get first 151 pokemon
-    const interval = {offset: 0, limit: 151};
+        const interval = {offset: 0, limit: 151};
 
-    pokedex.getPokemonsList(interval)
-      .then(response => setPokemonArray(response.results))
-      .catch((error) => console.log(error));
-  }, []);
+        pokedex.getPokemonsList(interval)
+            .then(response => setPokemonArray(response.results))
+            .catch((error) => console.log(error));
+    }, []);
 
-  return (
-    <div className="pokelist">
-      <ul>
-        {pokemonArray.map((item) => (
-          <PokeCell key={item.name} pokemon={item.name}/>
-        ))}
-      </ul>
-    </div>
-  );
+    return (
+        <div className="pokelist">
+            <ul>
+                {pokemonArray.map((item) => (
+                    <PokeCell key={item.name} pokemon={item.name}/>
+                ))}
+            </ul>
+        </div>
+    );
 }
 
 export default PokeList;

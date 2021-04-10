@@ -21,9 +21,27 @@
   },
   "eslintConfig": {
     "extends": [
+      "eslint:recommended",
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "consistent-return": 2,
+      "indent": [
+        "error",
+        4
+      ],
+      "no-else-return": 1,
+      "semi": [
+        1,
+        "always"
+      ],
+      "space-unary-ops": 2,
+      "react/destructuring-assignment": [
+        "error",
+        "always"
+      ]
+    }
   },
   "browserslist": {
     "production": [
