@@ -1,35 +1,25 @@
-import React, { useState } from 'react';
-import './App.scss';
-import PokeDetails from './components/pokedetails/PokeDetails';
-import PokeList from './components/pokelist/PokeList';
-import Searchbox from './components/searchbox/Searchbox';
+import React, {useState} from 'react'
+import PokeDetails from './components/pokedetails/PokeDetails'
+import PokeList from './components/pokelist/PokeList'
+import Searchbox from './components/searchbox/Searchbox'
 
-const pokeapi = require("pokeapi-js-wrapper");
-
-//configure dex
-const Pokedex = new pokeapi.Pokedex({
-  protocol:"https",
-  cacheImages: true,
-  cache:true,
-  timeout: 5000
-});
+import './App.scss'
 
 function App() {
+  const [selectedPokemon, setSelectedPokemon] = useState('squirtle')
 
-  const [selectedPokemon, setSelectedPokemon] = useState("squirtle");
-
-    function handleChange(newValue) {
-      setSelectedPokemon(newValue);
-      console.log(selectedPokemon);
-    }
+  function handleChange(newValue) {
+    setSelectedPokemon(newValue)
+    console.log(selectedPokemon)
+  }
 
   return (
     <div className="App">
       <Searchbox selectedPokemon={selectedPokemon} onChange={handleChange}/>
-      <PokeList dex={Pokedex}/>
-      <PokeDetails dex={Pokedex} selectedPokemon={selectedPokemon}/>
+      <PokeList/>
+      <PokeDetails selectedPokemon={selectedPokemon}/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

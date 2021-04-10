@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from 'react'
+import React, {useEffect, useState} from 'react'
+import pokedex from '../../PokeDex'
+
 import './PokeDetails.scss'
 
-function PokeDetails (props) {
+function PokeDetails({selectedPokemon}) {
   const [pokemonDetails, setPokemonDetails] = useState([])
 
   useEffect(() => {
-    props.dex.getPokemonByName(props.selectedPokemon).then(function (response) {
+    pokedex.getPokemonByName(selectedPokemon).then(function (response) {
       setPokemonDetails(response)
       console.log('response ' + response.name)
     })
-  }, [])
+  }, [selectedPokemon])
 
   return (
     <div className="pokedetails">
-      <p>{props.selectedPokemon}</p>
+      <p>{selectedPokemon}</p>
       <p>{pokemonDetails.name}</p>
     </div>
-  );
+  )
 }
 
 export default PokeDetails

@@ -1,4 +1,5 @@
-import React, {  } from 'react';
+import React from 'react';
+
 import './PokeCell.scss';
 
 function PokeCell(props) {
@@ -7,4 +8,5 @@ function PokeCell(props) {
     <button className="pokeCell">{props.pokemon}</button>
   );
 }
+
 export default PokeCell;
