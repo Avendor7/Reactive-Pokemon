@@ -1,30 +1,30 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import PokeCell from './pokecell/PokeCell';
+import pokedex from '../../PokeDex';
+
 import './PokeList.scss';
 
-function PokeList(props) {
-  
-  //get first 151 pokemon
-  const interval = {
-    offset: 0,
-    limit: 151,
-  }
+function PokeList() {
+    const [pokemonArray, setPokemonArray] = useState([]);
 
-  
-  const [pokemonArray, setPokemonArray] = useState([]);
-  /*
-  props.dex.getPokemonsList(interval).then(function(response) {
-    setPokemonArray(response.results);
-  })
-*/
-  return (
-    <div className="pokelist">
-      <ul>
-        {pokemonArray.map((item)=>(
-            <PokeCell pokemon={item.name}/>
-        ))}
-      </ul>
-    </div>
-  );
+    useEffect(() => {
+    //get first 151 pokemon
+        const interval = {offset: 0, limit: 151};
+
+        pokedex.getPokemonsList(interval)
+            .then(response => setPokemonArray(response.results))
+            .catch((error) => console.log(error));
+    }, []);
+
+    return (
+        <div className="pokelist">
+            <ul>
+                {pokemonArray.map((item) => (
+                    <PokeCell key={item.name} pokemon={item.name}/>
+                ))}
+            </ul>
+        </div>
+    );
 }
+
 export default PokeList;
