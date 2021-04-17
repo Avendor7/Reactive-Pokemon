@@ -20,7 +20,7 @@ function PokeList() {
         <div className="pokelist">
             <ul>
                 {pokemonArray.map((item) => (
-                    <PokeCell key={item.name} pokemon={item.name}/>
+                    <PokeCell key={item.name} pokemon={item} index={pokemonArray.index}/>
                 ))}
             </ul>
         </div>
